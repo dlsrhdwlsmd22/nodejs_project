@@ -6,8 +6,6 @@
   </head>
 
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     <table border="1">
       <tr>
           <th>아이디</th>
@@ -15,12 +13,12 @@
           <th>이름</th>
           <th>나이</th>  
       </tr>
-      <% for(var i=0;i<docs.length;i++) { %>
+      <% for(var i=0;i<list.length;i++) { %>
       <tr>
-        <td><%= docs[i].id %></td>
-        <td><%= docs[i].pw %></td>
-        <td><%= docs[i].name %></td>
-        <td><%= docs[i].age %></td>  
+        <td><%= list[i].id %></td>
+        <td><%= list[i].pw %></td>
+        <td><%= list[i].name %></td>
+        <td><%= list[i].age %></td>  
       </tr>
     <% } %>
     </table>

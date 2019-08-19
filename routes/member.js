@@ -44,8 +44,35 @@ router.post('/join.js', function(req, res, next) {
       });
     }
   });
+  //삭제 
+  //var arr = {id:'1'}
+  //collection.deleteOne(arr).then(function(result){}) //deleteMany()
   
-  
+  //수정
+  //collection.updateMany({name:'1'}, {$set : {name: '바꿀이름'}}).then(function(result))
+});
+
+router.get('/list.js', function(req, res, next) {
+  var url = "mongodb://localhost:27017/test";
+
+  MongoClient.connect(url, function(err, dbconn){
+    if(err){
+      console.log("오류1 : " + err);
+    } else {
+      var collection =dbconn.db("test").collection('table1');
+      //{age : {$gt : 1 }} == where age > 1
+      //select id, pw, na,e, age, from member
+      //select * from member order by id desc limit 5;
+      collection.find({}, {'projection':{id:1, name:1, age:1}}).sort({id: -1}).limit(5).toArray(function(err, docs){
+        if(err){
+          console.log(err);
+        } else{
+          console.log("select ok : %j", docs);
+          res.render('member_list',{title:'회원목록', list:docs});
+        }
+      });
+    }
+  });
 });
 
 
