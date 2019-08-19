@@ -18,7 +18,11 @@
         <td><%= list[i].id %></td>
         <td><%= list[i].pw %></td>
         <td><%= list[i].name %></td>
-        <td><%= list[i].age %></td>  
+        <td><%= list[i].age %></td>
+        <td>
+          <a href="/mem/update.js?id=<%= list[i].id %>">수정</a>
+          <a href="/mem/delete.js?id=<%= list[i].id %>">삭제</a>
+        </td>  
       </tr>
     <% } %>
     </table>

@@ -14,6 +14,29 @@ router.get('/join.js', function(req, res, next) {
   res.render('join', { title: '회원가입'});
 });
 
+//get일 경우에는 req.query.네임값
+router.get('/delete.js', function(req, res, next){
+  var sid = req.query.id;
+  var url = "mongodb://localhost:27017/test";
+  
+  MongoClient.connect(url, function(err, dbconn){
+    if(err){
+      console.log("오류1"+err);
+    }else{
+      var collection = dbconn.db("test").collection('table1');
+      var arr = {id:sid};
+      collection.deleteOne(arr).then(function(result){
+        console.log('delete ok %j', result);
+        res.redirect('/mem/list.js');
+      }, function(err){
+        console.log(err);
+      
+      });
+    }
+    dbconn.close();
+  });
+});
+//post일 경우에는 req.body.네임값
 
 router.post('/join.js', function(req, res, next) {
   var id = req.body.mem_id;  //값받기
