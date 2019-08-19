@@ -21,7 +21,7 @@ router.get('/board.json', function(req, res, next){
 router.get('/boardlist.do', function(req, res, next){
 	oracledb.getConnection({
 		user : "system",
-		password:"123456",
+		password:"young0914",
 		connectString : "127.0.0.1:1521/xe"
 	}, function(err, conn){
 		if(err){
