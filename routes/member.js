@@ -26,8 +26,8 @@ router.post('/join.js', function(req, res, next) {
   console.log(arr);
   
   //서버 접속 정보
-//  var url = "mongodb://localhost:27017/test"; //test가 DB명
-  var url = "mongodb://dandyyoung.asuscomm.com:3091/test";
+  var url = "mongodb://localhost:27017/test"; //test가 DB명
+//  var url = "mongodb://dandyyoung.asuscomm.com:3091/test";
   MongoClient.connect(url, function(err, dbconn){
     if(err){
       console.log("오류1"+err);
@@ -51,8 +51,8 @@ router.post('/join.js', function(req, res, next) {
 
 router.get('/list.js', function(req, res, next) {
   //서버 접속 정보
-//  var url = "mongodb://localhost:27017/test"; //test가 DB명
-  var url = "mongodb://dandyyoung.asuscomm.com:3091/test";
+  var url = "mongodb://localhost:27017/test"; //test가 DB명
+//  var url = "mongodb://dandyyoung.asuscomm.com:3091/test";
   MongoClient.connect(url, function(err, dbconn){
     if(err){
       console.log("오류1"+err);
