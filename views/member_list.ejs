@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table border="1">
+      <tr>
+          <th>아이디</th>
+          <th>암호</th>
+          <th>이름</th>
+          <th>나이</th>  
+      </tr>
+      <% for(var i=0;i<docs.length;i++) { %>
+      <tr>
+        <td><%= docs[i].id %></td>
+        <td><%= docs[i].pw %></td>
+        <td><%= docs[i].name %></td>
+        <td><%= docs[i].age %></td>  
+      </tr>
+    <% } %>
+    </table>
+  </body>
+  
+</html>

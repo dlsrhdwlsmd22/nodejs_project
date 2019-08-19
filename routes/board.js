@@ -6,6 +6,7 @@ var router = express.Router();
 var oracledb = require('oracledb');
 oracledb.autoCommit = true;
 
+
 //127.0.0.1:3000/board.do
 router.get('/board.do', function(req, res, next){
 	res.render('board');
@@ -20,7 +21,7 @@ router.get('/board.json', function(req, res, next){
 router.get('/boardlist.do', function(req, res, next){
 	oracledb.getConnection({
 		user : "system",
-		password:"young0914",
+		password:"123456",
 		connectString : "127.0.0.1:1521/xe"
 	}, function(err, conn){
 		if(err){
